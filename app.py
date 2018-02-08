@@ -7,11 +7,11 @@ import re
 app=Flask(__name__)
 api=Api(app)
 
-consumer_key = "YOUR CONSUMER KEY"
-consumer_secret= "YOUR CONSUMER SECRET KEY"
+consumer_key = "WdcIxzy3ovIOfT0Qpt8KR6x8F"
+consumer_secret= "TWrMtfz4EZePznAzvjmt3bt0Z1suNCc8xmPVkogcltAQvEQFXV"
 
-access_token= "YOUR ACCESS TOKEN"
-access_token_secret = "YOUR ACCESS SECRET TOKEN"
+access_token= "960546971818889216-HsjgFIOjN1Bi4Fat935VhSxup8aHnmx"
+access_token_secret = "BtmG38zWaE6DxAbGp5XdHFCEUnNROjVGaFVp6SFGAmG7p"
 
 auth=tweepy.OAuthHandler(consumer_key,consumer_secret)
 auth.set_access_token(access_token,access_token_secret)
@@ -25,7 +25,7 @@ class sentiment(Resource):
         
         polarity=getPolarity(topic)
         result={ "polarity": polarity }
-        return result ,201
+        return result ,200
 
 
 
