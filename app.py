@@ -7,11 +7,11 @@ import re
 app=Flask(__name__)
 api=Api(app)
 
-consumer_key = "WdcIxzy3ovIOfT0Qpt8KR6x8F"
-consumer_secret= "TWrMtfz4EZePznAzvjmt3bt0Z1suNCc8xmPVkogcltAQvEQFXV"
+consumer_key = "YOUR CONSUMER KEY"
+consumer_secret= "YOUR CONSUMER SECRET KEY"
 
-access_token= "960546971818889216-HsjgFIOjN1Bi4Fat935VhSxup8aHnmx"
-access_token_secret = "BtmG38zWaE6DxAbGp5XdHFCEUnNROjVGaFVp6SFGAmG7p"
+access_token= "YOUR ACCESS TOKEN"
+access_token_secret = "YOUR ACCESS SECRET TOKEN"
 
 auth=tweepy.OAuthHandler(consumer_key,consumer_secret)
 auth.set_access_token(access_token,access_token_secret)
