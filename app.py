@@ -7,11 +7,11 @@ import re
 app=Flask(__name__)
 api=Api(app)
 
-consumer_key = "YOUR CONSUMER KEY"
-consumer_secret= "YOUR CONSUMER SECRET KEY"
+consumer_key = "WdcIxzy3ovIOfT0Qpt8KR6x8F"
+consumer_secret= "TWrMtfz4EZePznAzvjmt3bt0Z1suNCc8xmPVkogcltAQvEQFXV"
 
-access_token= "YOUR ACCESS TOKEN"
-access_token_secret = "YOUR ACCESS SECRET TOKEN"
+access_token= "960546971818889216-HsjgFIOjN1Bi4Fat935VhSxup8aHnmx"
+access_token_secret = "BtmG38zWaE6DxAbGp5XdHFCEUnNROjVGaFVp6SFGAmG7p"
 
 auth=tweepy.OAuthHandler(consumer_key,consumer_secret)
 auth.set_access_token(access_token,access_token_secret)
@@ -30,7 +30,7 @@ class sentiment(Resource):
 
 
 def getPolarity(topic):
-    public_tweet=api2.search(q=topic,count=100)
+    public_tweet=api2.search(q=topic,count=50)
     max=len(public_tweet)
     
     sum=0
@@ -47,11 +47,13 @@ def getPolarity(topic):
 
     avg_polarity=sum/max
 
-    if avg_polarity<0:
+    if (avg_polarity<0):
         polarity="Negative"
-
-    if (0<=avg_polarity<=0.2):
+    elif(0<=avg_polarity<=0.15):
         polarity="Neutral"
+    else:
+        polarity="Positive"
+    
 
     return polarity
 
